@@ -57,22 +57,22 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+      <main className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-8">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">
             Translate Sign Language to Any Language
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Use your camera to capture sign language gestures and get instant translations 
             powered by advanced AI technology.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-8">
           {/* Camera Section */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Camera Feed</h3>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">Camera Feed</h3>
               <CameraView onCapture={handleCapture} />
             </div>
           </div>
@@ -81,7 +81,7 @@ function App() {
           <div className="space-y-6">
             {/* Language Selector */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Target Language</h3>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">Target Language</h3>
               <LanguageSelector
                 selectedLanguage={selectedLanguage}
                 onLanguageChange={setSelectedLanguage}
@@ -91,35 +91,35 @@ function App() {
         </div>
 
         {/* Translation Results */}
-        <div className="mt-12">
-          <h3 className="text-lg font-semibold text-gray-900 mb-6">Translation Results</h3>
+        <div className="mt-8 sm:mt-12">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-6">Translation Results</h3>
           <TranslationResult result={translationResult} isLoading={isLoading} />
         </div>
 
         {/* Instructions */}
-        <div className="mt-16 bg-white rounded-2xl shadow-lg p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">How to Use</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-10 sm:mt-16 bg-white rounded-2xl shadow-lg p-4 sm:p-8">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">How to Use</h3>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
             <div className="text-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-blue-600">1</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-4">
+                <span className="text-lg sm:text-xl font-bold text-blue-600">1</span>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Start Camera</h4>
-              <p className="text-gray-600">Click "Start Camera" to begin capturing video from your webcam.</p>
+              <h4 className="font-semibold text-gray-900 mb-1 sm:mb-2">Start Camera</h4>
+              <p className="text-gray-600 text-sm sm:text-base">Click "Start Camera" to begin capturing video from your webcam.</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-purple-600">2</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-4">
+                <span className="text-lg sm:text-xl font-bold text-purple-600">2</span>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Make Signs</h4>
-              <p className="text-gray-600">Perform clear sign language gestures in front of the camera.</p>
+              <h4 className="font-semibold text-gray-900 mb-1 sm:mb-2">Make Signs</h4>
+              <p className="text-gray-600 text-sm sm:text-base">Perform clear sign language gestures in front of the camera.</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-green-600">3</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-4">
+                <span className="text-lg sm:text-xl font-bold text-green-600">3</span>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Get Translation</h4>
-              <p className="text-gray-600">Click "Translate Sign" to get AI-powered translations.</p>
+              <h4 className="font-semibold text-gray-900 mb-1 sm:mb-2">Get Translation</h4>
+              <p className="text-gray-600 text-sm sm:text-base">Click "Translate Sign" to get AI-powered translations.</p>
             </div>
           </div>
         </div>
