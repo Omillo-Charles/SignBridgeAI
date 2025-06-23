@@ -10,7 +10,7 @@ export const useCamera = () => {
     error: null
   });
 
-  const startCamera = async () => {
+  const startCamera = async (retryCount = 0) => {
     console.log('Starting camera...');
     
     try {
@@ -66,7 +66,13 @@ export const useCamera = () => {
           }));
         };
       } else {
-        throw new Error('Video element not available');
+        if (retryCount < 5) {
+          console.warn('Video element not available, retrying...', retryCount);
+          setTimeout(() => startCamera(retryCount + 1), 100);
+          return;
+        } else {
+          throw new Error('Video element not available');
+        }
       }
     } catch (error) {
       console.error('Camera error:', error);

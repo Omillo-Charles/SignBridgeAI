@@ -42,15 +42,14 @@ export const CameraView: React.FC<CameraViewProps> = ({ onCapture }) => {
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
       <div className="relative">
-        {cameraStatus.isActive ? (
-          <video
-            ref={videoRef}
-            autoPlay
-            playsInline
-            muted
-            className="w-full h-96 object-cover bg-gray-900"
-          />
-        ) : (
+        <video
+          ref={videoRef}
+          autoPlay
+          playsInline
+          muted
+          className={`w-full h-96 object-cover bg-gray-900 ${cameraStatus.isActive ? '' : 'hidden'}`}
+        />
+        {!cameraStatus.isActive && (
           <div className="w-full h-96 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
             <div className="text-center">
               <Camera className="w-16 h-16 text-gray-400 mx-auto mb-4" />
@@ -59,7 +58,6 @@ export const CameraView: React.FC<CameraViewProps> = ({ onCapture }) => {
             </div>
           </div>
         )}
-        
         {cameraStatus.isActive && (
           <div className="absolute top-4 right-4">
             <div className="flex items-center space-x-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
