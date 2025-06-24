@@ -44,7 +44,7 @@ function App() {
                 <Languages className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">SignTranslate AI</h1>
+                <h1 className="text-2xl font-bold text-gray-900">SignBridge AI</h1>
                 <p className="text-sm text-gray-600">Powered by Gemini AI</p>
               </div>
             </div>
